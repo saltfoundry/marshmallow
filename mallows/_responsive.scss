@@ -1,0 +1,128 @@
+/*--------------------------------------*\
+    RESPONSIVE
+\*--------------------------------------*/
+
+/**
+*    Helper classes for hiding and altering widths of elements at mobile, tablet and desktop breakpoints.
+*
+*    1. Hide Elements
+*    2. Width (column span)
+*    
+*/
+ 
+// Rows contain columns, set by default to a mobile width. Columns are floated left.
+
+.row {
+    
+    //Row needs to be cleared because they contain only floating elements
+    
+    &:after {
+        content:    '';
+        display:    table;
+        width:      100%;
+    }
+    
+    .column {
+        float:     left;
+        display:   block;
+        width:     100%;
+    }    
+    
+    // Element width - abiding by the grid system where .m-wn will span 'n' columns.
+    $mallow-column-width: percentage(1/$mallow-column-count);
+   
+    
+    //
+    //    Column Mixin
+    //
+    
+    @mixin span-columns($small-device, $medium-device:null, $large-device:null) {
+        
+        width: $mallow-column-width * $small-device;
+        
+        @if $medium-device {
+            @if ($medium-device == hide){
+                @media all and (min-width: $mallow-medium-device-width) and (max-width: $mallow-large-device-width) {
+                    display: none;
+                } 
+            } @else {
+                @media all and (min-width: $mallow-medium-device-width) and (max-width: $mallow-large-device-width) {
+                    width: $mallow-column-width * $medium-device;
+                }   
+            }
+        }
+        
+        @if $large-device {
+            @if ($medium-device == hide){
+                @media all and (min-width: $mallow-large-device-width) {
+                    display: none;
+                } 
+            } @else {
+                @media all and (min-width: $mallow-large-device-width) {
+                    width: $mallow-column-width * $large-device;
+                }
+            }
+        }
+    }
+    
+    
+    //
+    //    Data attribute invoked columns
+    //
+    
+    // Small device default
+    
+    @for $i from 1 to $mallow-column-count {
+        .column[data-span='#{$i}'] { 
+            width: $mallow-column-width * $i;
+        }
+    }
+    
+    @media all and (min-width: $mallow-medium-device-width) and (max-width: $mallow-large-device-width) {
+        @for $i from 1 to $mallow-column-count {
+            .column[data-span-medium-device='#{$i}'] { 
+                width: $mallow-column-width * $i;
+            }
+        }
+    }
+    
+    @media all and (min-width: $mallow-large-device-width){
+         @for $i from 1 to $mallow-column-count {
+            .column[data-span-large-device='#{$i}'] { 
+                width: $mallow-column-width * $i;
+            }
+        }
+    }
+    
+    
+    
+    //
+    //    Hiding Elements
+    //
+    
+    @media all and (max-width: $mallow-small-device-width) {
+       .column[data-hide*='small-devices'] { 
+            display: none;
+       }
+    }
+    
+    
+    @media all and (min-width: $mallow-medium-device-width) and (max-width: $mallow-large-device-width) {
+       .column[data-hide*='medium-devices'] { 
+            display: none;
+       }
+    }
+    
+    
+    @media all and (min-width: $mallow-large-device-width) {
+       .column[data-hide*='large-devices'] { 
+            display: none;
+       }
+    }
+    
+    .column[data-hide*='all-devices'] { 
+        display: none;
+    }
+
+    
+}

@@ -1,0 +1,88 @@
+/*--------------------------------------*\
+    BASE
+\*--------------------------------------*/
+
+/**
+*    Basic helper classes for simple manipulation of common CSS rules.
+*
+*    1. Padding, Margin, Positioning
+*    2. Floats
+*    3. Position
+*    4. Pointer
+*    5. Opacity
+*    6. Overflow
+*    7. Z-index
+*
+*/
+ 
+ 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+// Manipulator lists - Please leave me alone :)
+$rules: ("p": "padding", "m": "margin", "a" : "position");
+$directions: ("t": "-top", "l": "-left", "b": "-bottom", "r" : "-right", "" : "");
+
+
+// Manipulators for Padding, Margin and Positioning
+@each $rule-slug, $rule in $rules {
+    .#{$rule-slug} {
+        @each $direction-slug, $direction in $directions {
+            &#{$direction-slug} {
+                
+            //Reduce file size by generating less iterations
+            @for $i from -4 to 4 {
+                    &--#{$i}  { #{$rule}#{$direction}: $mallow-base-space * $i; }
+                }
+            }    
+        }
+    }
+}
+
+// Float Manipulators
+.f--r {    float: right;   }
+.f--l {    float: left;    }
+.f--n {    float: none;    }
+
+
+// Positioning Manipulators
+.p--s {    position:  static;     }
+.p--r {    position: relative;    }
+.p--a {    position: absolute;    }
+
+
+// Pointer Manipulator
+.cp {    cursor: pointer;    }
+
+
+// Opacity Manipulator 
+.o {
+    //Reduce file size by generating less iterations
+    @for $i from 1 to 10 {
+        &--#{$i}  { opacity: $i*0.1; }
+    } 
+}
+
+// Overflow Manipulator
+
+$rules: ("of": "overflow", "ofx": "overflow-x", "ofy" : "overflow-y");
+
+@each $rule-slug, $rule in $rules {
+    .#{$rule-slug} {
+        &--h {    #{$rule}: hidden;    }
+        &--s {    #{$rule}: scroll;    }
+        &--a {    #{$rule}: auto;      }
+    }
+}
+
+// Z-Index Manipulator
+
+.z {
+    @for $i from -1 to 10 {
+        &--#{$i}  { 
+            z-index: $i * 100;
+        }
+    }  
+}    

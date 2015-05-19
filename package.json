@@ -1,0 +1,33 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Marshmallow is a superlight library of syntactic sugar, to help developers make minor styling tweaks to specific elements efficiently and tidily without needing to create specific styling rules.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-install": "^0.4.0",
+    "sass": "^0.5.0",
+    "gulp-sass": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.3.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-util": "^3.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saltfoundry/marshmallow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saltfoundry/marshmallow/issues"
+  },
+  "homepage": "https://github.com/saltfoundry/marshmallow"
+}

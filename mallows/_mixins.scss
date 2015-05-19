@@ -1,0 +1,18 @@
+/*--------------------------------------*\
+    MIXINS
+\*--------------------------------------*/
+
+/**
+*    Helper classes for hiding and altering widths of elements at mobile, tablet and desktop breakpoints.
+*
+*    1. Vendor Prefixing
+*    
+*/
+ 
+@mixin vendor-prefix($name, $argument) {
+    -webkit-#{$name}: #{$argument};
+    -ms-#{$name}: #{$argument};
+    -moz-#{$name}: #{$argument};
+    -o-#{$name}: #{$argument};
+    #{$name}: #{$argument};
+}

@@ -1,0 +1,33 @@
+/*--------------------------------------*\
+    FLUFF
+\*--------------------------------------*/
+
+/**
+*    A little more marshmallow fluff...
+*
+*    1. Border Radius
+*    2. Box Shadow
+*    3. Text Shadow
+*    4. Zoom
+*
+*/
+ 
+ 
+ //Border Radius
+ 
+ //Box Shadow 
+ 
+ //Text Shadow
+ 
+ // Zoom Manipulator
+ .zm {
+    @for $i from 1 to 4 {
+        &--#{$i}  { 
+            -webkit-transform: scale($i); /* Saf3.1+, Chrome */
+            -moz-transform: scale($i); /* FF3.5+ */
+            -ms-transform: scale($i); /* IE9 */
+            -o-transform: scale($i); /* Opera 10.5+ */
+            transform: scale($i);     
+        }
+    }  
+}
