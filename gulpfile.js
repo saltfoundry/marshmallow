@@ -17,18 +17,23 @@ gulp.task('default', function() {
 
 // create a default task and just log a message
 gulp.task('build', function () {
-    gulp.src('./marshmallow.scss')
-   .pipe(sass({
+    
+    
+    gulp.src('marshmallow.scss')
+    .pipe(sass({
         includePaths: ['mallows'],
         errLogToConsole: true
     }))
     .pipe(autoprefixer({
-        browsers: ['last 3 versions', 'IE8'],
+        browsers: ['last 3 versions'],
         cascade: false
     }))
+    .pipe(gulp.dest('distribution/css'))
     .pipe(cssmin())
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('distribution/css'));
+    
+    return gutil.log('Minified and ready to go!');
 });
 
 

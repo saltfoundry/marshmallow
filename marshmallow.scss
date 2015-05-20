@@ -7,9 +7,8 @@
 *
 */
 
-// OVERRIDES
 
-// Setup
+@import "bower_components/normalize-scss/normalize";
 
 // General
 $mallow-base-unit     : 16px;
@@ -17,11 +16,11 @@ $mallow-base-space    : 1rem;
 $mallow-column-count  : 12;
 
 // Layout
-$mallow-wrapper-width          : 1200px;
+$mallow-wrapper-width          : 1280px;
 
 $mallow-small-device-width     : 640px;
 $mallow-medium-device-width    : 960px;
-$mallow-large-device-width     : 1200px;
+$mallow-large-device-width     : 1280px;
 
 
 // Colour Palette
@@ -35,15 +34,11 @@ $mallow-font-primary     : 'Helvetica';
 $mallow-font-secondary   : 'Arial';
 $mallow-font-tertiary    : 'Sans';
 
-// Comment out this wrapper to remove any prefixing on mallow classes
-//.#{$mallow-prefix}{
-
-  @import "base";
-  @import "responsive";
-  @import "borders";
-  @import "fluff";
-  @import "mixins";
-  @import "typography";
-
-//}
+// Includes
+@import "mallows/base";
+@import "mallows/responsive";
+@import "mallows/borders";
+@import "mallows/fluff";
+@import "mallows/mixins";
+@import "mallows/typography";
 
