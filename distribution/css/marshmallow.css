@@ -1,11 +1,3 @@
-/*
-*
-*    Marshmallow V1.0 - Mark-Ross Smith. 
-*    Mark.smith@hellomark.co.uk
-*    
-*    Copyright Mark-Ross LTD 2015.
-*
-*/
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -865,9 +857,18 @@ th {
 /**
 *    Helper classes for hiding and altering widths of elements at mobile, tablet and desktop breakpoints.
 *
-*    1. Hide Elements
-*    2. Width (column span)
+*    1. Row Declaration
+*    2. Column Declaration
+*    3. Column Control Mixin
+*    4. Column Control Classes
+*    2. Responsive Element Show/Hide Toggle Classes
 *    
+*/
+/**
+* Row Declaration
+*
+* Rows contain columns, set by default to a mobile width. Columns are floated left.
+*
 */
 .row:after {
   content: '';
