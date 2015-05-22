@@ -1,24 +1,21 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
 1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '--save-dev',
-1 verbose cli   'gulp-autoprefixer' ]
+1 verbose cli   'build',
+1 verbose cli   'demo' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
-4 error Failed to parse json
-4 error Unexpected string
-5 error File: /home/ubuntu/workspace/package.json
-6 error Failed to parse package.json data.
-6 error package.json must be actual JSON, not just JavaScript.
-6 error
-6 error This is not a bug in npm.
-6 error Tell the package author to fix their package.json file. JSON.parse
+4 info build /home/ubuntu/workspace/demo
+5 error Error: ENOENT, open '/home/ubuntu/workspace/demo/package.json'
+6 error If you need help, you may report this *entire* log,
+6 error including the npm and node versions, at:
+6 error     <http://github.com/npm/npm/issues>
 7 error System Linux 3.14.13-c9
-8 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "install" "--save-dev" "gulp-autoprefixer"
+8 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "build" "demo"
 9 error cwd /home/ubuntu/workspace
 10 error node -v v0.10.35
 11 error npm -v 1.4.28
-12 error file /home/ubuntu/workspace/package.json
-13 error code EJSONPARSE
-14 verbose exit [ 1, true ]
+12 error path /home/ubuntu/workspace/demo/package.json
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]

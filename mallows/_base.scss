@@ -21,7 +21,9 @@
 }
 
 
-// Manipulator lists - Please leave me alone :)
+/// @access public
+/// @name Manipulator lists
+
 $rules: ("p": "padding", "m": "margin", "a" : "position");
 $directions: ("t": "-top", "l": "-left", "b": "-bottom", "r" : "-right", "" : "");
 

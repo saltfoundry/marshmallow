@@ -5,17 +5,26 @@
 /**
 *    Helper classes for hiding and altering widths of elements at mobile, tablet and desktop breakpoints.
 *
-*    1. Hide Elements
-*    2. Width (column span)
+*    1. Row Declaration
+*    2. Column Declaration
+*    3. Column Control Mixin
+*    4. Column Control Classes
+*    2. Responsive Element Show/Hide Toggle Classes
 *    
 */
  
-// Rows contain columns, set by default to a mobile width. Columns are floated left.
+ 
+ 
+/**
+* Row Declaration
+*
+* Rows contain columns, set by default to a mobile width. Columns are floated left.
+*
+*/
 
 .row {
     
     //Row needs to be cleared because they contain only floating elements
-    
     &:after {
         content:    '';
         display:    table;
@@ -33,7 +42,7 @@
    
     
     //
-    //    Column Mixin
+    //    Column Control Mixin
     //
     
     @mixin span-columns($small-device, $medium-device:null, $large-device:null) {
@@ -64,7 +73,6 @@
             }
         }
     }
-    
     
     //
     //    Data attribute invoked columns
@@ -123,6 +131,4 @@
     .column[data-hide*='all-devices'] { 
         display: none;
     }
-
-    
 }

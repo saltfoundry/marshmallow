@@ -8,7 +8,8 @@ var gulp  = require('gulp'),
     sass = require('gulp-sass'),
     cssmin = require('gulp-cssmin'),
     rename = require('gulp-rename'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('gulp-autoprefixer'),
+    sassdoc = require('sassdoc');
     
 // create a default task and just log a message
 gulp.task('default', function() {
@@ -36,6 +37,16 @@ gulp.task('build', function () {
     return gutil.log('Minified and ready to go!');
 });
 
+gulp.task('document', function () {
+      var options = {
+        dest: 'docs',
+        verbose: true,
+        basePath: 'https://github.com/SassDoc/sassdoc',
+      };
+    
+      return gulp.src('./marshmallow.scss')
+        .pipe(sassdoc(options));
+});
 
 gulp.task('watch', function () {
   gulp.watch('./mallows/*.scss', ['sass']);
