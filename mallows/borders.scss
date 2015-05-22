@@ -1,0 +1,53 @@
+/*--------------------------------------*\
+    BORDERS
+\*--------------------------------------*/
+
+/**
+*    Manipulators for controlling borders and outlines
+*
+*    1. Border Width
+*    2. Border Color
+*    3. Border Radius
+*    4. Outline Width
+*    5. Outline Color
+*
+*/
+
+$colors : ($mallow-color-primary, $mallow-color-secondary, $mallow-color-tertiary);
+
+// Border Width Manipulator
+.b__w {
+    @for $i from 0 to 5 {
+        &--#{$i}  { 
+            border-width: $i + 'px';
+        }
+    }
+}
+ 
+// Border Color Manipulator
+
+// Border Radius Manipulator
+.b__r {
+    @for $i from 0 to 5 {
+        &--#{$i}  { 
+            border-radius: ($i/2) + 'rem';
+        }
+    } 
+}
+ 
+
+// Outline Width Manipulator
+.o__w {
+    @for $i from 0 to 5 {
+        &--#{$i}  { 
+            outline-width: $i + 'px';
+        }
+    }
+}
+ 
+
+// Outline Color Manipulator
+.o__c {
+    
+}
+ 
